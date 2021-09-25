@@ -18,7 +18,7 @@ export default function Layout({ children }) {
 			<Container className={classes.main}>
 				{children}
 			</Container>
-			<footer className="footer">
+			<footer className={classes.footer}>
 				<Typography>All right reserved. Next Commerce.</Typography>
 			</footer>
 		</div>
