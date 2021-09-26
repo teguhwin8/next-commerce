@@ -3,13 +3,14 @@ import Head from "next/head"
 import useStyles from "../utils/styles"
 import NextLink from "next/link"
 
-export default function Layout({ title, children }) {
+export default function Layout({ title, description, children }) {
 	const classes = useStyles()
 
 	return (
 		<div>
 			<Head>
-				<title>{title ? `${title} - ` : ''}Next Commerce by Teguh Widodo</title>
+				<title>{title ? `${title} - ` : ""}Next Commerce by Teguh Widodo</title>
+				{description && <meta name="desctiption" content={description}></meta>}
 			</Head>
 			<AppBar position="static" className={classes.navbar}>
 				<Toolbar>
@@ -21,14 +22,10 @@ export default function Layout({ title, children }) {
 					<div className={classes.grow}></div>
 					<div>
 						<NextLink href="/cart" passHref>
-							<Link>
-								Cart
-							</Link>
+							<Link>Cart</Link>
 						</NextLink>
 						<NextLink href="/login" passHref>
-							<Link>
-								Login
-							</Link>
+							<Link>Login</Link>
 						</NextLink>
 					</div>
 				</Toolbar>
