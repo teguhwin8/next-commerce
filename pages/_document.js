@@ -1,36 +1,20 @@
-<<<<<<< HEAD
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-
-class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
-  }
-
-  render() {
-    return (
-      <Html lang="en">
-        <Head />
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    )
-  }
-}
-
-export default MyDocument
-=======
-import React from 'react'
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheets } from '@material-ui/styles' // works with @material-ui/core/styles, if you prefer to use it.
+import React from "react"
+import Document, { Html, Head, Main, NextScript } from "next/document"
+import { ServerStyleSheets } from "@material-ui/styles" // works with @material-ui/core/styles, if you prefer to use it.
+// import theme from "../src/theme" // Adjust here as well
 
 export default class MyDocument extends Document {
 	render() {
 		return (
 			<Html lang="en">
-				<Head></Head>
+				<Head>
+					<link rel="preconnect" href="https://fonts.googleapis.com" />
+					<link rel="preconnect" href="https://fonts.gstatic.com" />
+					<link
+						href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+						rel="stylesheet"
+					/>
+				</Head>
 				<body>
 					<Main />
 					<NextScript />
@@ -79,7 +63,9 @@ MyDocument.getInitialProps = async (ctx) => {
 	return {
 		...initialProps,
 		// Styles fragment is rendered after the app and page rendering finish.
-		styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
+		styles: [
+			...React.Children.toArray(initialProps.styles),
+			sheets.getStyleElement(),
+		],
 	}
 }
->>>>>>> parent of aa0160e (I like tailwindcss)
