@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-export default function index() {
-  return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
-  )
-=======
 import {
 	Button,
 	Card,
@@ -56,5 +46,4 @@ export default function Home() {
 			</div>
 		</Layout>
 	)
->>>>>>> parent of aa0160e (I like tailwindcss)
 }
