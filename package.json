@@ -9,15 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@material-ui/core": "^4.12.3",
+>>>>>>> parent of aa0160e (I like tailwindcss)
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "autoprefixer": "^10.3.5",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "postcss": "^8.3.8",
     "tailwindcss": "^2.2.15"
+=======
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2"
+>>>>>>> parent of aa0160e (I like tailwindcss)
   }
 }
