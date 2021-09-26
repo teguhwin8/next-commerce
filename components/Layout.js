@@ -3,13 +3,13 @@ import Head from "next/head"
 import useStyles from "../utils/styles"
 import NextLink from "next/link"
 
-export default function Layout({ children }) {
+export default function Layout({ title, children }) {
 	const classes = useStyles()
 
 	return (
 		<div>
 			<Head>
-				<title>Next Commerce by Teguh Widodo</title>
+				<title>{title ? `${title} - ` : ''}Next Commerce by Teguh Widodo</title>
 			</Head>
 			<AppBar position="static" className={classes.navbar}>
 				<Toolbar>
