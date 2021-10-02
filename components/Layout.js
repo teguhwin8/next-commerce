@@ -1,14 +1,4 @@
-import {
-	AppBar,
-	Container,
-	createTheme,
-	Link,
-	Toolbar,
-	Typography,
-	ThemeProvider,
-	CssBaseline,
-	Switch,
-} from "@material-ui/core"
+import { AppBar, Container, createTheme, Link, Toolbar, Typography, ThemeProvider, CssBaseline, Switch, Badge } from "@material-ui/core"
 import Head from "next/head"
 import useStyles from "../utils/styles"
 import NextLink from "next/link"
@@ -19,7 +9,7 @@ import NoSsr from "@material-ui/core/NoSsr"
 
 export default function Layout({ title, description, children }) {
 	const { state, dispatch } = useContext(Store)
-	const { darkMode } = state
+	const { darkMode, cart } = state
 
 	const theme = createTheme({
 		typography: {
@@ -70,14 +60,11 @@ export default function Layout({ title, description, children }) {
 						<div className={classes.grow}></div>
 						<div>
 							<NoSsr>
-								<Switch
-									checked={darkMode}
-									onChange={darkModeChangeHandler}
-								></Switch>
+								<Switch checked={darkMode} onChange={darkModeChangeHandler}></Switch>
 							</NoSsr>
 
 							<NextLink href="/cart" passHref>
-								<Link>Cart</Link>
+								<Link>{cart.cartItems.length > 0 ? <Badge color="secondary" badgeContent={cart.cartItems.length}>Cart</Badge> : "Cart"}</Link>
 							</NextLink>
 							<NextLink href="/login" passHref>
 								<Link>Login</Link>
